@@ -1,0 +1,114 @@
+<div class="super_container">
+    <!-- Home -->
+    <app-top-route></app-top-route>
+    <!-- Contact -->
+    <div class="contact">
+        <!-- Contact Info -->
+        <div class="contact_info_container">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Form -->
+                    <div class="col-lg-6">
+                        <div class="contact_form">
+                            <div class="contact_info_title">Contact Form</div>
+                            <form [formGroup]="contactForm" #disabledButton="ngForm">
+                                <!-- <form [formGroup]="villeForm" #disabledButton="ngForm" (ngSubmit)="addVilles()"> -->
+                                <div class="form-group">
+
+                                    <div class="form_title">Nom</div>
+                                    <input type="text" formControlName="nom" name="nom" class="form-control" [(ngModel)]="contact.nom" />
+
+                                </div>
+                                <div *ngIf="validator">
+                                    <div *ngIf="contactForm.get('nom').touched && contactForm.get('nom').invalid" class="alert alert-danger">
+                                        <div *ngIf="contactForm.get('nom').errors.required">Title is Required !</div>
+                                        <div *ngIf="contactForm.get('nom').errors.minlength">Title should be great than 10 Caracters !</div>
+                                        <div *ngIf="contactForm.get('nom').errors.maxlength">Title should be lesser than 30 Caracters !</div>
+                                    </div>
+                                </div>
+                                <!-- <button type="submit" class="btn btn-primary">Save changes</button> -->
+                                <div class="form-group">
+
+                                    <div class="form_title">email</div>
+                                    <input type="text" formControlName="email" name="email" class="form-control" [(ngModel)]="contact.email" />
+
+                                </div>
+                                <div *ngIf="validator">
+                                    <div *ngIf="contactForm.get('email').touched && contactForm.get('email').invalid" class="alert alert-danger">
+                                        <div *ngIf="contactForm.get('email').errors.required">Title is Required !</div>
+                                        <div *ngIf="contactForm.get('email').errors.minlength">Title should be great than 10 Caracters !</div>
+                                        <div *ngIf="contactForm.get('email').errors.maxlength">Title should be lesser than 30 Caracters !</div>
+                                    </div>
+                                </div>
+                                <!-- <button type="submit" class="btn btn-primary">Save changes</button> -->
+                                <div class="form-group">
+
+                                    <div class="form_title">message</div>
+                                    <textarea formControlName="message" name="message" class="comment_input comment_textarea" [(ngModel)]="contact.message"></textarea>
+
+                                </div>
+                                <div *ngIf="validator">
+                                    <div *ngIf="contactForm.get('message').touched && contactForm.get('message').invalid" class="alert alert-danger">
+                                        <div *ngIf="contactForm.get('message').errors.required">Title is Required !</div>
+                                        <div *ngIf="contactForm.get('message').errors.minlength">Title should be great than 10 Caracters !</div>
+                                        <div *ngIf="contactForm.get('message').errors.maxlength">Title should be lesser than 30 Caracters !</div>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="addContact"></label>
+                                    <button type="submit" class="btn trans_200" [disabled]="disabledButton.form.invalid" id="addRole" (click)="addContact()"> Envoyer</button>
+                                    <!-- <input type="submit" class="btn trans_200" [disabled]="disabledButton.form.invalid" id="addRole" (click)="addContact()" value="Add contact"> -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="col-lg-6">
+                        <div class="contact_info">
+                            <div class="contact_info_title">Contact Info</div>
+                            <div class="contact_info_text">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a distribution of letters.</p>
+                            </div>
+                            <div class="contact_info_location">
+                                <div class="contact_info_location_title">New York Office</div>
+                                <ul class="location_list">
+                                    <li>T8/480 Collins St, Melbourne VIC 3000, New York</li>
+                                    <li>1-234-567-89011</li>
+                                    <li>info.deercreative@gmail.com</li>
+                                </ul>
+                            </div>
+                            <div class="contact_info_location">
+                                <div class="contact_info_location_title">Australia Office</div>
+                                <ul class="location_list">
+                                    <li>Forrest Ray, 191-103 Integer Rd, Corona Australia</li>
+                                    <li>1-234-567-89011</li>
+                                    <li>info.deercreative@gmail.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Map -->
+    <div class="container mt-5 mb-5">
+        <!-- <h1>{{ title }}</h1> -->
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapC($event)" (mapDblClick)="mapDblClick($event)">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            <agm-marker [latitude]="latCasa" [longitude]="lngCasa"></agm-marker>
+            <agm-marker [latitude]="latJdida" [longitude]="lngJdida"></agm-marker>
+            <!-- <agm-marker [latitude]="latFes" [longitude]="lngFes"></agm-marker> -->
+            <agm-marker [latitude]="latTanger" [longitude]="lngTanger"></agm-marker>
+            <agm-marker [latitude]="latSafi" [longitude]="lngSafi"></agm-marker>
+            <agm-marker [latitude]="latAssouira" [longitude]="lngAssouira"></agm-marker>
+            <agm-marker [latitude]="latMarrakech" [longitude]="lngMarrakech"></agm-marker>
+            <agm-marker [latitude]="latMaknes" [longitude]="lngMaknes"></agm-marker>
+            <agm-marker [latitude]="latRabat" [longitude]="lngRabat"></agm-marker>
+            <agm-marker [latitude]="latOujda" [longitude]="lngOujda"></agm-marker>
+            <agm-marker [latitude]="latAgadir" [longitude]="lngAgadir"></agm-marker>
+        </agm-map>
+
+    </div>
+</div>
