@@ -5,8 +5,8 @@
             line-height: 1.2;
             /* color: #384158; */
             /* padding-bottom: 25%; */
-            right: 40%;
-            position: relative;
+            /* right: 40%;
+            position: relative; */
         }
         
         .home_slider_subtitle {
@@ -14,16 +14,25 @@
             /* color: #76777a; */
             /* margin-top: -20%; */
             /* padding-top: -20%; */
-            right: 40%;
-            position: relative;
+            /* right: 40%;
+            position: relative; */
         }
         
         .titles {
             padding-bottom: 20%;
         }
         
-        .carousel-caption {
+        .carousel-caption .aside1 {
+            bottom: 150px;
             /* padding-bottom: 420px; */
+            /* right: 15%; */
+            /* bottom: 150px;
+            left: 15%;
+            z-index: 10;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: #fff;
+            text-align: center; */
         }
         
         .home_slider_nav {
@@ -66,9 +75,88 @@
     height: 15px;
 } */
         
+        .serachinput {
+            background-color: #2898E2;
+        }
+        
+        .btn {
+            background: #152f84;
+            padding: 20px 40px;
+            text-transform: uppercase;
+            font-family: "Barlow", sans-serif;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            border-radius: 5px;
+            -moz-user-select: none;
+            font-weight: 400;
+            letter-spacing: 1px;
+            line-height: 0;
+            margin-bottom: 0;
+            margin: 10px;
+            cursor: pointer;
+            transition: color 0.4s linear;
+            position: relative;
+            z-index: 1;
+            border: 0;
+            overflow: hidden;
+            margin: 0;
+        }
+        
+        .btn::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 101%;
+            height: 101%;
+            background: #84232f;
+            z-index: 1;
+            border-radius: 5px;
+            transition: transform 0.5s;
+            transition-timing-function: ease;
+            transform-origin: 0 0;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+            transform: scaleX(0);
+            border-radius: 0;
+        }
+        
+        .btn:hover::before {
+            transform: scaleX(1);
+            color: #fff !important;
+            z-index: -1;
+        }
+        
+        .btn:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+        /*btn end*/
+        
         @media only screen and (max-width: 959px) {
             .slide {
                 margin-top: 100px;
+            }
+            .home_slider_nav {
+                /* top: 85%;
+                width: 35px;
+                height: 35px */
+                display: none;
+            }
+            .home_slider_nav i {
+                /* line-height: 35px;
+                font-size: 15px; */
+            }
+            .aside1 {
+                top: 60px;
+                right: 90px;
+            }
+            .aside1 .home_slider_title {
+                font-size: 35px;
+            }
+            .aside1 .home_slider_subtitle {
+                font-size: 20px;
             }
         }
         
@@ -76,11 +164,25 @@
             .slide {
                 margin-top: 100px;
             }
+            .aside1 {
+                top: 125px;
+            }
         }
         
         @media only screen and (max-width: 575px) {
-            .slide {
-                margin-top: 90px;
+            /* .serachinput {} */
+            .carousel-caption {
+                position: relative;
+                left: 0%;
+                width: 90%;
+                margin-top: 2.5rem;
+            }
+            .aside1 {
+                display: none !important;
+            }
+            .btn {
+                background: #152f84;
+                padding: 15px 15px;
             }
         }
         

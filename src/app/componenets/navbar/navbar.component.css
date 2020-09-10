@@ -757,7 +757,7 @@ begin button
 *********************************/
 
 .btn-me {
-    background: #000000;
+    background: #2898E2;
     padding: 20px 44px;
     /* text-transform: uppercase; */
     /* font-family: "Barlow", sans-serif; */
@@ -765,7 +765,7 @@ begin button
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
-    border-radius: 5px;
+    border-radius: 10px;
     -moz-user-select: none;
     font-weight: 400;
     letter-spacing: 1px;
@@ -787,7 +787,7 @@ begin button
     height: 101%;
     background: #152f84;
     z-index: 1;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: transform 0.5s;
     transition-timing-function: ease;
     transform-origin: 0 0;

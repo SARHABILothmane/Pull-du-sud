@@ -30,6 +30,7 @@ import { FormCondidatureComponent } from './componenets/form-condidature/form-co
 import { CondidatureComponent } from './pages/condidature/condidature.component';
 import { ButtonAboutComponent } from './componenets/button-about/button-about.component';
 import { SearchTrakingComponent } from './componenets/search-traking/search-traking.component';
+import { ServicehomeComponent } from './componenets/servicehome/servicehome.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { SearchTrakingComponent } from './componenets/search-traking/search-trak
     DossierAfournirComponent,
     ButtonAboutComponent,
     SeConnecterComponent,
-    SearchTrakingComponent
+    SearchTrakingComponent,
+    ServicehomeComponent
   ],
   imports: [
     BrowserModule,
